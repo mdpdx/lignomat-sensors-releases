@@ -1,119 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lignomat Sensors — Download</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Download Lignomat Sensors for Windows and macOS, or request an invitation to the iOS and Android prerelease programs.">
+  <title>Lignomat Sensors - Downloads</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
+    :root {
+      color-scheme: light;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #f5f5f5;
-      color: #1a1a1a;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      padding: 48px 16px;
+      color: #1a2733;
+      background: #f2f5f8;
+      line-height: 1.5;
     }
-    .card {
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 40px 16px; }
+    main {
+      width: min(100%, 920px);
+      margin: 0 auto;
+      padding: 36px;
       background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-      padding: 40px 48px;
-      max-width: 540px;
-      width: 100%;
-      text-align: center;
+      border: 1px solid #e1e7ed;
+      border-radius: 16px;
+      box-shadow: 0 8px 28px rgb(24 39 56 / 8%);
     }
-    h1 { font-size: 1.6rem; margin-bottom: 8px; }
-    .subtitle { color: #555; font-size: 0.95rem; margin-bottom: 32px; }
+    h1 { margin: 0; color: #173b5e; font-size: 2rem; }
+    h2 { margin: 30px 0 14px; color: #173b5e; font-size: 1.25rem; }
+    p { margin: 8px 0; }
+    .subtitle { margin: 8px 0 24px; color: #536273; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .platform {
+      min-width: 0;
+      padding: 20px;
+      background: #fbfcfe;
+      border: 1px solid #dce4ec;
+      border-radius: 12px;
+    }
+    .platform h2 { margin: 0 0 8px; }
+    .platform p { color: #536273; }
     .btn {
       display: inline-block;
-      background: #1565C0;
+      margin-top: 12px;
+      padding: 10px 16px;
       color: #fff;
+      background: #1769aa;
+      border-radius: 7px;
+      font-weight: 650;
       text-decoration: none;
-      padding: 14px 36px;
-      border-radius: 8px;
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 16px;
-      transition: background 0.15s;
     }
-    .btn:hover { background: #0D47A1; }
-    .btn:active { background: #0A3880; }
-    .version-info { color: #777; font-size: 0.88rem; margin-top: 10px; }
-    .requirements {
+    .btn:hover, .btn:focus-visible { background: #125488; }
+    .btn:focus-visible, a:focus-visible { outline: 3px solid #e09a25; outline-offset: 3px; }
+    .version-info, .status { color: #647487; font-size: 0.88rem; }
+    .status { min-height: 1.5em; }
+    .error { color: #a12424 !important; }
+    .invite-label {
+      display: inline-block;
+      margin-bottom: 5px;
+      padding: 3px 8px;
+      color: #285a3e;
+      background: #e9f5ec;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 650;
+    }
+    .links {
       margin-top: 28px;
-      font-size: 0.85rem;
-      color: #666;
-      border-top: 1px solid #eee;
-      padding-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid #e5eaf0;
     }
-    .loading { color: #999; font-size: 0.95rem; }
-    .error { color: #c62828; font-size: 0.9rem; }
+    .links p { color: #536273; }
+    .requirements {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid #e5eaf0;
+      color: #647487;
+      font-size: 0.9rem;
+    }
+    a { color: #075ea8; }
+    .btn { color: #fff; }
+    @media (max-width: 620px) {
+      body { padding: 16px 10px; }
+      main { padding: 24px 18px; }
+      h1 { font-size: 1.7rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <div class="card">
+  <main>
     <h1>Lignomat Sensors</h1>
-    <p class="subtitle">MC, EMC, Temperature, and RH monitoring
-    <br>with Lignomat Sensor devices RX/TX, KDM and BL2 
-    </p>
+    <p class="subtitle">MC, EMC, temperature, and relative humidity monitoring
+      with Lignomat RX/TX, KDM, and BL2 sensor devices.</p>
 
-    <div id="download-area">
-      <p class="loading">Loading latest release…</p>
-    </div>
+    <section class="grid" aria-label="Download options">
+      <article class="platform">
+        <h2>Windows</h2>
+        <p>Desktop installer for Windows 10 and 11 (64-bit).</p>
+        <p class="status" id="windows-status" aria-live="polite">Checking for the latest Windows release…</p>
+        <a class="btn" id="windows-download" hidden>Download for Windows</a>
+      </article>
 
-    <div class="requirements">
-      <strong>Requirements:</strong>
-      <br>Windows 10 or 11, 64-bit
-      <br>Run installer as Administrator.
-      <br>BL2 USB driver is included and installed.
-    </div>
-  </div>
+      <article class="platform">
+        <h2>macOS</h2>
+        <p>Disk image for supported macOS computers.</p>
+        <p class="status" id="macos-status" aria-live="polite">Checking for the latest macOS release…</p>
+        <a class="btn" id="macos-download" hidden>Download for macOS</a>
+      </article>
+
+      <article class="platform">
+        <span class="invite-label">Customer prerelease</span>
+        <h2>iPhone and iPad</h2>
+        <p>The iOS prerelease is available to customers by email invitation
+          through <strong>Apple TestFlight</strong>. Install TestFlight from the
+          App Store, then open and accept the invitation on your device.</p>
+        <p><a href="https://testflight.apple.com/">About Apple TestFlight</a></p>
+      </article>
+
+      <article class="platform">
+        <span class="invite-label">Customer prerelease</span>
+        <h2>Android phones and tablets</h2>
+        <p>The Android prerelease is available to customers by email invitation
+          through <strong>Firebase App Distribution</strong> (not a public Google
+          Play Store release). Accept the invite and follow its install
+          instructions; Firebase may direct you to install Firebase App Tester.</p>
+        <p><a href="https://firebase.google.com/docs/app-distribution/get-set-up-as-a-tester">Firebase tester setup instructions</a></p>
+      </article>
+    </section>
+
+    <section class="links" aria-label="Getting started and release history">
+      <h2>Getting started</h2>
+      <p><a href="lignomat-sensors-getting-started-v2.html">View the Getting Started guide</a>
+        or <a href="lignomat-sensors-getting-started-v2.pdf" download>download the guide as a PDF</a>.</p>
+      <p><a href="https://github.com/mdpdx/lignomat-sensors-releases/releases">View all desktop releases</a></p>
+    </section>
+
+    <p class="requirements"><strong>Windows requirements:</strong>
+      Windows 10 or 11, 64-bit. Run the installer as Administrator. The BL2 USB
+      driver is included and installed with the app.</p>
+  </main>
 
   <script>
-    // ── Config ─────────────────────────────────────────────────────────────
-    // Update REPO to match your public releases repo (owner/name)
     const REPO = "mdpdx/lignomat-sensors-releases";
-    // ───────────────────────────────────────────────────────────────────────
+    const API_URL = `https://api.github.com/repos/${REPO}/releases?per_page=100`;
+    const RELEASES_URL = `https://github.com/${REPO}/releases`;
+    const ASSET_PATTERNS = {
+      windows: /^setup-lignomat-sensors-(\d{1,2})-(\d{1,2})-(\d{1,2})-(\d{1,3})\.exe$/i,
+      macos: /^lignomat-sensors-(\d{1,2})-(\d{1,2})-(\d{1,2})-(\d{1,3})\.dmg$/i
+    };
 
-    const area = document.getElementById("download-area");
+    function parseVersion(assetName, pattern) {
+      const match = assetName.match(pattern);
+      return match ? match.slice(1).map(Number) : null;
+    }
 
-    async function loadLatestRelease() {
-      try {
-        const res = await fetch(
-          `https://api.github.com/repos/${REPO}/releases/latest`,
-          { headers: { Accept: "application/vnd.github+json" } }
-        );
-        if (!res.ok) throw new Error(`GitHub API ${res.status}`);
-        const rel = await res.json();
+    function compareVersions(left, right) {
+      for (let i = 0; i < left.length; i += 1) {
+        if (left[i] !== right[i]) return left[i] - right[i];
+      }
+      return 0;
+    }
 
-        // Find the .exe asset
-        const asset = rel.assets.find(a => a.name.endsWith(".exe"));
-        if (!asset) throw new Error("No .exe found in release assets");
+    async function getReleases() {
+      const releases = [];
+      let url = API_URL;
 
-        const version = rel.tag_name.replace(/^v/, "");
-        const date = new Date(rel.published_at).toLocaleDateString("en-US", {
-          year: "numeric", month: "long", day: "numeric"
+      while (url) {
+        const response = await fetch(url, {
+          headers: { Accept: "application/vnd.github+json" }
         });
+        if (!response.ok) {
+          throw new Error(`GitHub API returned ${response.status}`);
+        }
+        const page = await response.json();
+        releases.push(...page);
+        const nextPage = response.headers.get("Link")
+          ?.split(",")
+          .find(link => link.includes('rel="next"'));
+        url = nextPage?.match(/<([^>]+)>/)?.[1] ?? null;
+      }
 
-        area.innerHTML = `
-          <a class="btn" href="${asset.browser_download_url}" download>
-            ⬇ Download  v${version}
-          </a>
-          <p class="version-info">
-            Released ${date} &nbsp;·&nbsp; ${(asset.size / 1024 / 1024).toFixed(1)} MB
-          </p>`;
-      } catch (err) {
-        area.innerHTML = `
-          <p class="error">Could not load release information.<br>
-          <a href="https://github.com/${REPO}/releases/latest">Go to releases page</a></p>`;
-        console.error(err);
+      return releases;
+    }
+
+    function findLatestAsset(releases, platform) {
+      let latest = null;
+      const pattern = ASSET_PATTERNS[platform];
+
+      for (const release of releases) {
+        if (release.draft || release.prerelease) continue;
+
+        for (const asset of release.assets) {
+          const version = parseVersion(asset.name, pattern);
+          if (!version) continue;
+
+          const candidate = { ...asset, release, version };
+          if (!latest ||
+              compareVersions(candidate.version, latest.version) > 0 ||
+              (compareVersions(candidate.version, latest.version) === 0 &&
+               candidate.release.published_at > latest.release.published_at)) {
+            latest = candidate;
+          }
+        }
+      }
+
+      return latest;
+    }
+
+    function renderPlatform(platform, asset) {
+      const button = document.getElementById(`${platform}-download`);
+      const status = document.getElementById(`${platform}-status`);
+
+      if (!asset) {
+        status.textContent = "No published download is available yet.";
+        return;
+      }
+
+      button.href = asset.browser_download_url;
+      button.textContent = `Download ${asset.release.tag_name}`;
+      button.hidden = false;
+
+      const releaseDate = new Date(asset.release.published_at);
+      const sizeMb = (asset.size / 1024 / 1024).toFixed(1);
+      status.textContent = `Released ${releaseDate.toLocaleDateString()} · ${sizeMb} MB`;
+    }
+
+    async function loadDownloads() {
+      try {
+        const releases = await getReleases();
+        renderPlatform("windows", findLatestAsset(releases, "windows"));
+        renderPlatform("macos", findLatestAsset(releases, "macos"));
+      } catch (error) {
+        for (const platform of ["windows", "macos"]) {
+          const status = document.getElementById(`${platform}-status`);
+          status.classList.add("error");
+          status.textContent = "Could not load download information.";
+        }
+        console.error("Could not load Lignomat Sensors releases:", error);
       }
     }
 
-    loadLatestRelease();
+    loadDownloads();
   </script>
 </body>
 </html>

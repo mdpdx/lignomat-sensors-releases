@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Getting started with the Lignomat Sensors app on Windows, with example download and installation prompts.">
+  <title>Lignomat Sensors App - Getting Started (Version 2)</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #202a35;
+      background: #f2f5f8;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      line-height: 1.6;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main {
+      width: min(100% - 32px, 900px);
+      margin: 40px auto;
+      padding: 48px;
+      background: #fff;
+      border: 1px solid #e0e6ed;
+      border-radius: 16px;
+      box-shadow: 0 8px 28px rgb(24 39 56 / 8%);
+    }
+    h1, h2, h3 { line-height: 1.25; color: #173b5e; }
+    h1 { margin: 0 0 24px; font-size: 2.1rem; }
+    h2 {
+      margin: 40px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e7eef5;
+      font-size: 1.5rem;
+    }
+    h3 { margin: 28px 0 8px; font-size: 1.15rem; }
+    p { margin: 8px 0 14px; }
+    ol { padding-left: 24px; }
+    ol > li { padding-left: 6px; margin: 0 0 24px; }
+    ul { padding-left: 22px; }
+    a { color: #075ea8; overflow-wrap: anywhere; }
+    .intro {
+      padding: 18px 22px;
+      background: #f1f7fc;
+      border-left: 4px solid #2878b8;
+      border-radius: 4px;
+    }
+    .actions { margin: 0 0 24px; }
+    .download {
+      display: inline-block;
+      padding: 10px 16px;
+      color: #fff;
+      background: #1769aa;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .download:hover { background: #125488; }
+    figure {
+      margin: 16px 0 28px;
+      padding: 16px;
+      background: #f8fafc;
+      border: 1px solid #dce4ec;
+      border-radius: 10px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    figure img {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      max-height: 460px;
+      margin: 0 auto;
+      object-fit: contain;
+      background: #fff;
+    }
+    figcaption {
+      margin-top: 12px;
+      color: #536273;
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    figcaption p { margin: 5px 0 0; }
+    .table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    th, td {
+      padding: 10px 12px;
+      border: 1px solid #dce4ec;
+      text-align: left;
+      vertical-align: top;
+      overflow-wrap: anywhere;
+    }
+    th { background: #edf3f8; color: #173b5e; }
+    tr { break-inside: avoid; page-break-inside: avoid; }
+    .note { color: #536273; font-size: 0.92rem; }
+    @media (max-width: 600px) {
+      main { width: 100%; margin: 0; padding: 24px 18px; border: 0; border-radius: 0; }
+      h1 { font-size: 1.75rem; }
+    }
+    @media print {
+      :root { background: #fff; }
+      body { background: #fff; }
+      main {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      h1 { font-size: 24pt; }
+      h2 { margin-top: 26px; font-size: 17pt; }
+      h3 { font-size: 12pt; }
+      figure { padding: 10px; }
+      figure img { max-height: 3.1in; }
+      figcaption, table { font-size: 8.5pt; }
+      a { color: inherit; }
+      a[href^="http"] { text-decoration: none; }
+      .actions { display: none; }
+      .intro, th { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Lignomat Sensors App - Getting Started <span class="note">Version 2</span></h1>
+    <nav class="actions" aria-label="Document actions">
+      <a class="download" href="lignomat-sensors-getting-started-v2.pdf" download>
+        Download this guide as PDF
+      </a>
+    </nav>
+
+    <ol>
+      <li>
+        <strong>Download the Installer: Bypassing the browser warning.</strong>
+        <p>Browsers like Google Chrome often flag newly released software as an
+          "uncommon download" simply because it hasn't been downloaded by
+          thousands of people yet.</p>
+        <ul>
+          <li>Click the <strong>Downloads</strong> icon at the top right of your browser window.</li>
+          <li>If you see a warning that the file is "not commonly downloaded" or "suspicious," hover over the blocked file and click the <strong>three dots</strong> (or right-click).</li>
+          <li>Select <strong>Keep</strong>.</li>
+          <li>If a red warning page appears, click <strong>Continue anyway</strong> to finalize the download.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Launch the Setup File: Clearing Microsoft Defender SmartScreen.</strong>
+        <p>When you double-click the downloaded setup file, Windows may intercept
+          it with a blue "Windows protected your PC" screen. This is Microsoft
+          Defender SmartScreen pausing an app it hasn't seen before.</p>
+        <ul>
+          <li>Click the <strong>More info</strong> link located just under the main text.</li>
+          <li>Verify the app name, then click the <strong>Run anyway</strong> button that appears at the bottom of the window.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Authorize the Installation: User Account Control (UAC).</strong>
+        <p>Before the installation can begin, Windows requires administrative
+          permission to let the app write files to your hard drive and create
+          shortcuts.</p>
+        <ul>
+          <li>A prompt will appear asking: <em>"Do you want to allow this app to make changes to your device?"</em></li>
+          <li>Click <strong>Yes</strong>. The installation wizard will now open and guide you through the rest of the setup.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p class="intro">Below are standard visual samples of the exact warning menus,
+      download popups, SmartScreen overlays, and UAC elevation prompts for
+      Windows 11, Windows 10, Edge, and Chrome.</p>
+
+    <section aria-labelledby="browser-warnings">
+      <h2 id="browser-warnings">Browser Security Warnings</h2>
+
+      <h3>1. Microsoft Edge Download Flyout</h3>
+      <p>When downloading an un-reputed executable in Microsoft Edge, a top-right
+        flyout popup blocks execution.</p>
+      <figure>
+        <img src="https://www.ghacks.net/wp-content/uploads/2022/07/edge-download-warning.png"
+          alt="Microsoft Edge download flyout showing a download warning"
+          width="412" height="460">
+        <figcaption>
+          <p><strong>Image URL:</strong>
+            <a href="https://www.ghacks.net/wp-content/uploads/2022/07/edge-download-warning.png">https://www.ghacks.net/wp-content/uploads/2022/07/edge-download-warning.png</a>
+          </p>
+          <p><strong>Source Article:</strong>
+            <a href="https://www.ghacks.net/2022/07/02/how-to-deal-with-microsoft-edges-isnt-commonly-downloaded-warning/">gHacks Edge Download Warning Guide</a>
+            · <strong>Dimensions:</strong> 412 × 460 px · <strong>Screen DPI:</strong> 96 DPI
+          </p>
+        </figcaption>
+      </figure>
+
+      <h3>2. Google Chrome Download Warning Screen</h3>
+      <p>Chromium flags uncommon <code>.exe</code> downloads and requires users
+        to explicitly expand options or visit <code>chrome://downloads</code> to
+        click <strong>Continue anyway</strong>.</p>
+      <figure>
+        <img src="https://www.ghacks.net/wp-content/uploads/2024/07/chrome-download-warning-reason.png"
+          alt="Google Chrome download warning screen for an uncommon executable"
+          width="800" height="450">
+        <figcaption>
+          <p><strong>Image URL:</strong>
+            <a href="https://www.ghacks.net/wp-content/uploads/2024/07/chrome-download-warning-reason.png">https://www.ghacks.net/wp-content/uploads/2024/07/chrome-download-warning-reason.png</a>
+          </p>
+          <p><strong>Source Article:</strong>
+            <a href="https://www.ghacks.net/2024/07/17/google-chrome-will-soon-throw-security-warnings-at-you-that-you-cannot-ignore/">gHacks Chrome Security Warnings Overview</a>
+            · <strong>Dimensions:</strong> 800 × 450 px · <strong>Screen DPI:</strong> 96 DPI
+          </p>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="smartscreen-prompts">
+      <h2 id="smartscreen-prompts">Windows Defender SmartScreen Prompts</h2>
+
+      <h3>3. Windows 11 SmartScreen Dialog</h3>
+      <p>Windows 11 displays a centered blue card with rounded UI corners and
+        dark acrylic background blur. Clicking <strong>More info</strong>
+        reveals the <strong>Run anyway</strong> button.</p>
+      <figure>
+        <img src="https://learn-attachment.microsoft.com/api/attachments/ab9cca93-dbce-44a4-95ff-f7e177feb6cd?platform=QnA"
+          alt="Windows 11 Defender SmartScreen warning prompt"
+          width="448" height="448">
+        <figcaption>
+          <p><strong>Image URL:</strong>
+            <a href="https://learn-attachment.microsoft.com/api/attachments/ab9cca93-dbce-44a4-95ff-f7e177feb6cd?platform=QnA">https://learn-attachment.microsoft.com/api/attachments/ab9cca93-dbce-44a4-95ff-f7e177feb6cd?platform=QnA</a>
+          </p>
+          <p><strong>Source Page:</strong>
+            <a href="https://learn.microsoft.com/en-us/answers/questions/4164018/windows-defender-smartscreen-warning-prompt-no-lon">Microsoft Learn QA - SmartScreen Warning Prompt</a>
+            · <strong>Dimensions:</strong> 448 × 448 px · <strong>Screen DPI:</strong> 96 DPI
+          </p>
+        </figcaption>
+      </figure>
+
+      <h3>4. Windows 10 SmartScreen: Unsigned App Example</h3>
+      <p>These direct Windows 10 screenshots show the SmartScreen warning and
+        its <strong>More info</strong> flow. The same warning may appear before
+        launching a downloaded installer that is unsigned, unrecognized, or has
+        not built a reputation. These examples show the security prompt, not the
+        Lignomat setup wizard; wording and displayed details can vary by Windows
+        version.</p>
+
+      <h3>Step 1: Initial warning</h3>
+      <p>Windows protected your PC appears, with <strong>More info</strong>
+        available to reveal the publisher and app details.</p>
+      <figure>
+        <img src="https://www.itsupportguides.com/wp-content/uploads/Windows10-SmartScreenBlocked1-e1577961749377.png"
+          alt="Actual Windows 10 SmartScreen warning before showing app details"
+          width="640" height="600">
+        <figcaption>
+          <p><strong>Image URL:</strong>
+            <a href="https://www.itsupportguides.com/wp-content/uploads/Windows10-SmartScreenBlocked1-e1577961749377.png">https://www.itsupportguides.com/wp-content/uploads/Windows10-SmartScreenBlocked1-e1577961749377.png</a>
+          </p>
+          <p><strong>Source:</strong>
+            <a href="https://www.itsupportguides.com/knowledge-base/windows-10/windows-defender-smartscreen-prevented-an-unrecognized-app-error/">IT Support Guides - Windows Defender SmartScreen prevented an unrecognized app</a>
+            · <strong>Image dimensions:</strong> 640 × 600 px
+          </p>
+        </figcaption>
+      </figure>
+
+      <h3>Step 2: Find the More info link</h3>
+      <p>The source's annotated screenshot points to <strong>More info</strong>.
+        Click it to see the app name, publisher, and the option to continue.</p>
+      <figure>
+        <img src="https://www.itsupportguides.com/wp-content/uploads/Windows10-SmartScreenBlocked3-e1577961783885.png"
+          alt="Windows 10 SmartScreen warning with an arrow pointing to More info"
+          width="641" height="600">
+        <figcaption>
+          <p><strong>Image URL:</strong>
+            <a href="https://www.itsupportguides.com/wp-content/uploads/Windows10-SmartScreenBlocked3-e1577961783885.png">https://www.itsupportguides.com/wp-content/uploads/Windows10-SmartScreenBlocked3-e1577961783885.png</a>
+          </p>
+          <p><strong>Source:</strong>
+            <a href="https://www.itsupportguides.com/knowledge-base/windows-10/windows-defender-smartscreen-prevented-an-unrecognized-app-error/">IT Support Guides - Windows Defender SmartScreen prevented an unrecognized app</a>
+            · <strong>Image dimensions:</strong> 641 × 600 px
+          </p>
+        </figcaption>
+      </figure>
+
+      <h3>Step 3: Review the publisher and choose Run anyway</h3>
+      <p>After <strong>More info</strong>, Windows shows the file name and
+        publisher. Continue only if you trust the download and have verified it
+        came from Lignomat.</p>
+      <figure>
+        <img src="https://www.itsupportguides.com/wp-content/uploads/Windows10-SmartScreenBlocked2-e1577961768782.png"
+          alt="Expanded Windows 10 SmartScreen screen showing an example file, Unknown publisher, and Run anyway"
+          width="640" height="593">
+        <figcaption>
+          <p><strong>Image URL:</strong>
+            <a href="https://www.itsupportguides.com/wp-content/uploads/Windows10-SmartScreenBlocked2-e1577961768782.png">https://www.itsupportguides.com/wp-content/uploads/Windows10-SmartScreenBlocked2-e1577961768782.png</a>
+          </p>
+          <p><strong>Source:</strong>
+            <a href="https://www.itsupportguides.com/knowledge-base/windows-10/windows-defender-smartscreen-prevented-an-unrecognized-app-error/">IT Support Guides - Windows Defender SmartScreen prevented an unrecognized app</a>
+            · <strong>Image dimensions:</strong> 640 × 593 px
+          </p>
+          <p class="note">The source screenshot shows a separate <code>.cmd</code>
+            example and its publisher details, not the Lignomat installer.</p>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="uac-prompts">
+      <h2 id="uac-prompts">User Account Control (UAC) Elevation Dialogs</h2>
+
+      <h3>5. Windows 11 UAC Prompt</h3>
+      <p>Windows 11 uses a light-mode floating card centered on a dimmed desktop
+        wallpaper background.</p>
+      <figure>
+        <img src="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/images/uac-credential-prompt.png"
+          alt="Windows 11 User Account Control credential prompt"
+          width="420" height="236">
+        <figcaption>
+          <p><strong>Image URL:</strong>
+            <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/images/uac-credential-prompt.png">https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/images/uac-credential-prompt.png</a>
+          </p>
+          <p><strong>Source Page:</strong>
+            <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/how-it-works">Microsoft Learn - User Account Control How-It-Works</a>
+            · <strong>Dimensions:</strong> 420 × 236 px · <strong>Screen DPI:</strong> 96 DPI
+          </p>
+        </figcaption>
+      </figure>
+
+      <h3>6. Windows 10 Classic UAC Dialog</h3>
+      <p>Windows 10 uses a dark blue header banner with standard square borders.</p>
+      <figure>
+        <img src="https://learn.microsoft.com/en-us/windows/win32/uxguide/images/winenv-uac-image1.png"
+          alt="Windows 10 classic User Account Control dialog"
+          width="432" height="235">
+        <figcaption>
+          <p><strong>Image URL:</strong>
+            <a href="https://learn.microsoft.com/en-us/windows/win32/uxguide/images/winenv-uac-image1.png">https://learn.microsoft.com/en-us/windows/win32/uxguide/images/winenv-uac-image1.png</a>
+          </p>
+          <p><strong>Source Page:</strong>
+            <a href="https://learn.microsoft.com/en-us/windows/win32/uxguide/winenv-uac">Microsoft Learn - User Account Control UX Guidelines</a>
+            · <strong>Dimensions:</strong> 432 × 235 px · <strong>Screen DPI:</strong> 96 DPI
+          </p>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="reference-table">
+      <h2 id="reference-table">Summary Reference Table</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Prompt / Dialog</th>
+              <th scope="col">Platform</th>
+              <th scope="col">Direct Image URL</th>
+              <th scope="col">Dimensions</th>
+              <th scope="col">Resolution / DPI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Edge Download Flyout</td>
+              <td>Edge (Win 10/11)</td>
+              <td><a href="https://www.ghacks.net/wp-content/uploads/2022/07/edge-download-warning.png">https://www.ghacks.net/wp-content/uploads/2022/07/edge-download-warning.png</a></td>
+              <td>412 × 460 px</td>
+              <td>96 DPI</td>
+            </tr>
+            <tr>
+              <td>Chrome Warning Screen</td>
+              <td>Chrome (Win 10/11)</td>
+              <td><a href="https://www.ghacks.net/wp-content/uploads/2024/07/chrome-download-warning-reason.png">https://www.ghacks.net/wp-content/uploads/2024/07/chrome-download-warning-reason.png</a></td>
+              <td>800 × 450 px</td>
+              <td>96 DPI</td>
+            </tr>
+            <tr>
+              <td>SmartScreen Prompt</td>
+              <td>Windows 11</td>
+              <td><a href="https://learn-attachment.microsoft.com/api/attachments/ab9cca93-dbce-44a4-95ff-f7e177feb6cd?platform=QnA">https://learn-attachment.microsoft.com/api/attachments/ab9cca93-dbce-44a4-95ff-f7e177feb6cd?platform=QnA</a></td>
+              <td>448 × 448 px</td>
+              <td>96 DPI</td>
+            </tr>
+            <tr>
+              <td>Windows 10 SmartScreen flow (3 screenshots)</td>
+              <td>Windows 10</td>
+              <td><a href="https://www.itsupportguides.com/wp-content/uploads/Windows10-SmartScreenBlocked2-e1577961768782.png">https://www.itsupportguides.com/wp-content/uploads/Windows10-SmartScreenBlocked2-e1577961768782.png</a></td>
+              <td>640 × 593 px (expanded prompt)</td>
+              <td>Not stated</td>
+            </tr>
+            <tr>
+              <td>UAC Elevation</td>
+              <td>Windows 11</td>
+              <td><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/images/uac-credential-prompt.png">https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/images/uac-credential-prompt.png</a></td>
+              <td>420 × 236 px</td>
+              <td>96 DPI</td>
+            </tr>
+            <tr>
+              <td>UAC Elevation</td>
+              <td>Windows 10</td>
+              <td><a href="https://learn.microsoft.com/en-us/windows/win32/uxguide/images/winenv-uac-image1.png">https://learn.microsoft.com/en-us/windows/win32/uxguide/images/winenv-uac-image1.png</a></td>
+              <td>432 × 235 px</td>
+              <td>96 DPI</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Images are loaded from their original source URLs. An internet
+        connection is required to display them.</p>
+    </section>
+  </main>
+</body>
+</html>
