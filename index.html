@@ -34,6 +34,8 @@
       gap: 16px;
     }
     .platform {
+      display: flex;
+      flex-direction: column;
       min-width: 0;
       padding: 20px;
       background: #fbfcfe;
@@ -42,6 +44,11 @@
     }
     .platform h2 { margin: 0 0 8px; }
     .platform p { color: #536273; }
+    .platform .requirements {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid #e5eaf0;
+    }
     .btn {
       display: inline-block;
       margin-top: 12px;
@@ -73,13 +80,6 @@
       border-top: 1px solid #e5eaf0;
     }
     .links p { color: #536273; }
-    .requirements {
-      margin-top: 20px;
-      padding-top: 16px;
-      border-top: 1px solid #e5eaf0;
-      color: #647487;
-      font-size: 0.9rem;
-    }
     a { color: #075ea8; }
     .btn { color: #fff; }
     @media (max-width: 620px) {
@@ -99,9 +99,14 @@
     <section class="grid" aria-label="Download options">
       <article class="platform">
         <h2>Windows</h2>
-        <p>Desktop installer for Windows 10 and 11 (64-bit).</p>
+        <p>Desktop installer for Windows 11 or 10 (64-bit).</p>
         <p class="status" id="windows-status" aria-live="polite">Checking for the latest Windows release…</p>
         <a class="btn" id="windows-download" hidden>Download for Windows</a>
+        <p>Need help installing? <a href="lignomat-sensors-getting-started-v2.html">View the Getting Started guide</a>
+          or <a href="lignomat-sensors-getting-started-v2.pdf" download>download it as a PDF</a>.</p>
+        <p class="requirements"><strong>Requirements:</strong> Windows 11 or 10,
+          64-bit. Run the installer as Administrator. The BL2 USB driver is
+          included and installed with the app.</p>
       </article>
 
       <article class="platform">
@@ -109,6 +114,8 @@
         <p>Disk image for supported macOS computers.</p>
         <p class="status" id="macos-status" aria-live="polite">Checking for the latest macOS release…</p>
         <a class="btn" id="macos-download" hidden>Download for macOS</a>
+        <p>Need help installing? <a href="lignomat-sensors-macos-install-guide.html">View the macOS installation guide</a>.</p>
+        <p class="requirements"><strong>Requirements:</strong> macOS 15 or later.</p>
       </article>
 
       <article class="platform">
@@ -125,22 +132,16 @@
         <h2>Android phones and tablets</h2>
         <p>The Android prerelease is available to customers by email invitation
           through <strong>Firebase App Distribution</strong> (not a public Google
-          Play Store release). Accept the invite and follow its install
-          instructions; Firebase may direct you to install Firebase App Tester.</p>
-        <p><a href="https://firebase.google.com/docs/app-distribution/get-set-up-as-a-tester">Firebase tester setup instructions</a></p>
+          Play Store release). Open the invitation on your Android device and
+          tap the <strong>Download</strong> button for Lignomat Sensors.
+          Installing the Firebase App Tester app is optional.</p>
       </article>
     </section>
 
-    <section class="links" aria-label="Getting started and release history">
-      <h2>Getting started</h2>
-      <p><a href="lignomat-sensors-getting-started-v2.html">View the Getting Started guide</a>
-        or <a href="lignomat-sensors-getting-started-v2.pdf" download>download the guide as a PDF</a>.</p>
+    <section class="links" aria-label="Release history">
+      <h2>Release history</h2>
       <p><a href="https://github.com/mdpdx/lignomat-sensors-releases/releases">View all desktop releases</a></p>
     </section>
-
-    <p class="requirements"><strong>Windows requirements:</strong>
-      Windows 10 or 11, 64-bit. Run the installer as Administrator. The BL2 USB
-      driver is included and installed with the app.</p>
   </main>
 
   <script>
