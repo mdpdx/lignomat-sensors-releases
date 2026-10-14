@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!--
+  GENERATED FILE. Shared Version 4 source. Edit this file, not the generated browser guides.
+  From the project root: python3 generate_getting_started.py
+  Then print each generated HTML to its matching PDF using Letter paper.
+  Browser markers select the download path; Windows sections remain shared.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Download and install Lignomat Sensors on Windows using Google Chrome, with screenshots of the browser path, Windows SmartScreen, and installation.">
+  <title>Lignomat Sensors - Google Chrome Getting Started (Version 4)</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #202a35;
+      background: #f2f5f8;
+      line-height: 1.5;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main {
+      width: min(100% - 32px, 900px);
+      margin: 32px auto;
+      padding: 40px;
+      background: #fff;
+      border: 1px solid #e0e6ed;
+      border-radius: 12px;
+    }
+    h1, h2, h3 { color: #173b5e; line-height: 1.25; }
+    h1 { margin: 0 0 12px; font-size: 2rem; }
+    h2 {
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e7eef5;
+      font-size: 1.4rem;
+    }
+    h3 { margin: 20px 0 8px; font-size: 1.1rem; }
+    p { margin: 8px 0 12px; }
+    ul, ol { padding-left: 24px; }
+    li { margin-bottom: 6px; }
+    a { color: #075ea8; overflow-wrap: anywhere; }
+    code { overflow-wrap: anywhere; }
+    .subtitle, .note { color: #536273; font-size: 0.9rem; }
+    .actions { margin: 16px 0; }
+    .intro {
+      margin: 16px 0;
+      padding: 12px 16px;
+      background: #f1f7fc;
+      border-left: 4px solid #2878b8;
+    }
+    .caution {
+      padding: 10px 14px;
+      background: #fff8e8;
+      border-left: 4px solid #bf8517;
+    }
+    .guide-page + .guide-page { margin-top: 40px; }
+    figure {
+      margin: 14px 0 20px;
+      padding: 10px;
+      border: 1px solid #dce4ec;
+      border-radius: 6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    figure img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 520px;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+    figure.menu img { max-height: 280px; }
+    figure.trust img { max-height: 580px; }
+    figcaption {
+      margin-top: 8px;
+      color: #536273;
+      font-size: 0.85rem;
+    }
+    .footer {
+      margin-top: 24px;
+      padding-top: 10px;
+      border-top: 1px solid #e0e6ed;
+      color: #536273;
+      font-size: 0.85rem;
+    }
+    @media (max-width: 600px) {
+      main { width: 100%; margin: 0; padding: 24px 18px; border: 0; border-radius: 0; }
+      h1 { font-size: 1.7rem; }
+    }
+    @page { size: letter portrait; margin: 0.6in; }
+    @media print {
+      :root { background: #fff; font-size: 10pt; line-height: 1.4; }
+      main {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+      }
+      h1 { font-size: 23pt; }
+      h2 { font-size: 16pt; }
+      h3 { font-size: 11pt; }
+      h1, h2, h3 { break-after: avoid; page-break-after: avoid; }
+      p { orphans: 3; widows: 3; }
+      .guide-page + .guide-page {
+        margin-top: 0;
+        break-before: page;
+        page-break-before: always;
+      }
+      figure { padding: 8px; margin: 10px 0 14px; }
+      figure img { max-height: 2.65in; }
+      figure.overview img, figure.launch img { max-height: 3.65in; }
+      figure.edge-overview img { max-height: 2.6in; }
+      figure.chrome-overview img { max-height: 3in; }
+      figure.menu img { max-height: 1.85in; }
+      figure.trust img { max-height: 5.4in; }
+      figure.permission img { max-height: 2.8in; }
+      figcaption, .note, .subtitle, .footer { font-size: 8.5pt; }
+      .actions { display: none; }
+      a { color: inherit; }
+      .intro, .caution { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="guide-page" aria-labelledby="guide-title">
+      <h1 id="guide-title">Lignomat Sensors App - Getting Started</h1>
+      <p class="subtitle">Guide Version 4 | Windows 11 / Windows 10 (64-bit) | Google Chrome</p>
+      <nav class="actions" aria-label="Document actions">
+        <a href="lignomat-sensors-getting-started-chrome.pdf" download>Download this guide as PDF</a>
+        <span aria-hidden="true"> | </span>
+        <a href="#chrome-download">Download instructions</a>
+        <span aria-hidden="true"> | </span>
+        <a href="lignomat-sensors-getting-started-edge.html">Using Microsoft Edge?</a>
+        <span aria-hidden="true"> | </span>
+        <a href="#windows-smartscreen">Windows installation</a>
+      </nav>
+      <p>Use this guide to download the Windows installer, respond to the
+        prompts you may see, and open Lignomat Sensors for the first time.
+        You will need administrator permission to install the app and its
+        included BL2 USB driver.</p>
+      <div class="intro">
+        <strong>Installation overview:</strong>
+        <ol>
+          <li>Choose the guide for the browser you use. This guide is for
+            <strong>Google Chrome</strong>.</li>
+          <li>Download the installer and allow the download if prompted.</li>
+          <li>Allow Windows to open the file and install the app.</li>
+        </ol>
+        <p>Some warnings may not appear, depending on your settings and
+          browser version. If a pictured warning does not appear, continue
+          to the next applicable instruction.</p>
+      </div>
+      <p class="caution"><strong>Before you continue:</strong> Only keep or run
+        an installer you intentionally downloaded from the Lignomat download
+        page linked below. If the source or file name is unexpected, cancel
+        and contact Lignomat. Do not turn off browser or Windows security
+        protection.</p>
+
+
+<h2 id="chrome-download">Google Chrome: download the Windows installer</h2>
+      <h3>1. Open the download page and choose Windows</h3>
+      <p>In Google Chrome, go to
+        <a href="https://mdpdx.github.io/lignomat-sensors-releases/">https://mdpdx.github.io/lignomat-sensors-releases/</a>.
+        Under <strong>Windows</strong>, click the blue <strong>Download</strong>
+        button for the available version.</p>
+      <figure class="overview chrome-overview">
+        <img src="chrome%20browser%20app%20download%20screenshots/Screenshot%202026-10-14%20030221.png"
+          alt="Lignomat download page in Google Chrome showing the Windows download button"
+          width="1522" height="1000">
+        <figcaption>Figure 1. The Windows download in Chrome. Screenshots
+          throughout this guide are representative examples, not a statement
+          of the latest release. Version numbers, release dates, and file sizes
+          may differ; download the current version offered on the download page.</figcaption>
+      </figure>
+    </section>
+
+
+
+<section class="guide-page" aria-labelledby="chrome-completed">
+      <h2 id="chrome-completed">Google Chrome: open the downloaded installer</h2>
+      <h3>2. Wait for the download to finish</h3>
+      <p>Chrome may show a completion popup below its download arrow near the
+        top-right corner. Wait until the installer entry says
+        <strong>Done</strong>.</p>
+      <figure>
+        <img src="chrome%20browser%20app%20download%20screenshots/Screenshot%202026-10-14%20030554.png"
+          alt="Chrome's download arrow and completion popup showing setup-lignomat-sensors-26-10-14-136.exe with status Done"
+          width="607" height="331">
+        <figcaption>Figure 2. Chrome's completed download. The arrow above the
+          popup opens the download history.</figcaption>
+      </figure>
+      <p class="note">No Chrome download warning is shown in this captured
+        path. Chrome may show different warnings on another computer or release.
+        If it blocks the file, review the source and message before proceeding;
+        do not turn off Safe Browsing. Windows SmartScreen, shown later, is
+        separate from Chrome's download checks.</p>
+
+      <h3>3. Open the completed installer</h3>
+      <p>Click Chrome's <strong>Downloads</strong> arrow to open
+        <strong>Recent download history</strong>, then click the completed
+        installer's file name to open it. The folder icon beside the entry
+        lets you locate the file in Windows if you prefer to double-click it
+        there.</p>
+      <figure>
+        <img src="chrome%20browser%20app%20download%20screenshots/Screenshot%202026-10-14%20030731.png"
+          alt="Chrome Recent download history showing the completed Lignomat installer and a folder icon beside it"
+          width="642" height="426">
+        <figcaption>Figure 3. Open the installer from Chrome's recent download
+          history, or locate it using the folder icon.</figcaption>
+      </figure>
+      <p>Continue with the <a href="#windows-smartscreen">Windows steps
+        below</a>. You do not need to download the installer again.</p>
+    </section>
+
+
+
+    <section class="guide-page" aria-labelledby="windows-smartscreen">
+      <h2 id="windows-smartscreen">Windows: review SmartScreen if it appears</h2>
+      <h3>Windows 1. Select More info</h3>
+      <p>If Windows displays <strong>Windows protected your PC</strong>,
+        Microsoft Defender SmartScreen has paused an unrecognized app.
+        This is a Windows prompt, not an Edge or Chrome download popup.
+        Click <strong>More info</strong> to review the app details.</p>
+      <figure>
+        <img src="chrome%20browser%20app%20download%20screenshots/Screenshot%202026-10-14%20030805.png"
+          alt="Windows protected your PC SmartScreen prompt with the More info link and Don't run button"
+          width="802" height="750">
+        <figcaption>Figure 4. The initial Windows SmartScreen prompt. If this
+          screen does not appear, continue to Windows permission.</figcaption>
+      </figure>
+      <h3>Windows 2. Review the app, then choose Run anyway if trusted</h3>
+      <p>Check that the <strong>App</strong> name matches the installer you
+        downloaded. <strong>Unknown publisher</strong> does not establish
+        that a file is safe. Choose <strong>Run anyway</strong> only for your
+        intended, trusted download; otherwise choose <strong>Don't run</strong>.
+        If Run anyway is unavailable, ask your IT administrator for help.</p>
+      <figure>
+        <img src="chrome%20browser%20app%20download%20screenshots/Screenshot%202026-10-14%20025906.png"
+          alt="Expanded Windows SmartScreen prompt showing setup-lignomat-sensors-26-10-11-135.exe, Unknown publisher, and Run anyway"
+          width="802" height="750">
+        <figcaption>Figure 5. Expanded SmartScreen details and the Run anyway
+          button. Compare the app name with the installer you downloaded;
+          its version number may differ from this example.</figcaption>
+      </figure>
+    </section>
+
+    <section class="guide-page" aria-labelledby="windows-permission">
+      <h2 id="windows-permission">Windows: approve installation permission</h2>
+      <h3>Windows 3. Approve User Account Control (UAC)</h3>
+      <p>Windows may ask, <strong>&ldquo;Do you want to allow this app from an
+        unknown publisher to make changes to your device?&rdquo;</strong>
+        Check the installer name again, then click <strong>Yes</strong> only
+        if this is the download you intended to run. A standard user account
+        may need an administrator to enter credentials.</p>
+      <figure class="permission">
+        <img src="chrome%20browser%20app%20download%20screenshots/Screenshot%202026-10-14%20030845.png"
+          alt="Windows User Account Control prompt for setup-lignomat-sensors-26-10-14-136.exe, with Yes and No buttons"
+          width="684" height="607">
+        <figcaption>Figure 6. Windows permission for the installer.
+          This prompt can follow either browser's download path; the desktop
+          background may dim depending on your Windows settings.</figcaption>
+      </figure>
+      <h3>Windows 4. Start the manual installation</h3>
+      <p>When you run the installer manually, it shows
+        <strong>Ready to Install</strong>. Click <strong>Install</strong>
+        to begin. This is different from an update started inside the app:
+        the app runs the same installer in silent mode, skipping the wizard
+        pages and showing installation progress instead. Windows permission
+        or installation errors may still require your attention.</p>
+      <figure>
+        <img src="edge%20browser%20download%20screenshots/Screenshot%202026-10-14%20011734.png"
+          alt="Lignomat Sensors setup version 26.10.11.135 showing Ready to Install and the Install button"
+          width="997" height="766">
+        <figcaption>Figure 7. Ready to Install and the Install button during
+          a manual installation.</figcaption>
+      </figure>
+    </section>
+
+    <section class="guide-page" aria-labelledby="install-app">
+      <h2 id="install-app">Install Lignomat Sensors</h2>
+      <h3>Windows 5. Allow setup to prepare</h3>
+      <p>Setup may briefly display <strong>Preparing to Install</strong>.
+        Leave the window open while it prepares the installation.
+        This screen may pass quickly before the progress bar appears.</p>
+      <figure>
+        <img src="chrome%20browser%20app%20download%20screenshots/Screenshot%202026-10-14%20030915.png"
+          alt="Lignomat Sensors setup version 26.10.14.136 displaying Preparing to Install"
+          width="997" height="766">
+        <figcaption>Figure 8. Setup preparing the installation.</figcaption>
+      </figure>
+
+      <h3>Windows 6. Wait while setup installs the app</h3>
+      <p>Leave the setup window open while the progress bar moves. Setup copies
+        the application files and installs the included BL2 USB driver.
+        Avoid clicking <strong>Cancel</strong> unless you intend to stop
+        installation.</p>
+      <figure>
+        <img src="edge%20browser%20download%20screenshots/Screenshot%202026-10-14%20011823.png"
+          alt="Lignomat Sensors setup extracting application files with a green installation progress bar"
+          width="997" height="766">
+        <figcaption>Figure 9. Installation in progress.
+          The file name and progress shown will change as setup runs.</figcaption>
+      </figure>
+      <p>When installation succeeds, setup closes and launches
+        <strong>Lignomat Sensors</strong>. It also creates a desktop shortcut
+        and a Start menu entry so you can open the app later.</p>
+    </section>
+
+    <section class="guide-page" aria-labelledby="first-launch">
+      <h2 id="first-launch">First launch: find your devices</h2>
+      <h3>Windows 7. Choose how to connect your Lignomat devices</h3>
+      <p>On a first run, the app may show a <strong>Find Lignomat
+        Devices</strong> dialog. Before scanning, make sure your RX or KDM
+        equipment is plugged into the computer and powered on.</p>
+      <figure class="launch">
+        <img src="chrome%20browser%20app%20download%20screenshots/Screenshot%202026-10-14%20030932.png"
+          alt="Lignomat Sensors first-run Find Lignomat Devices dialog offering Cancel, Let Me Choose a Port, and Scan for Devices"
+          width="1107" height="966">
+        <figcaption>Figure 10. The windowed first-run device discovery dialog. The
+          background device list reflects the computer used for this capture;
+          your own list may be different.</figcaption>
+      </figure>
+      <ul>
+        <li><strong>Scan for Devices:</strong> Let the app help find connected
+          equipment.</li>
+        <li><strong>Let Me Choose a Port:</strong> Choose the connection port
+          yourself if you already know which one to use.</li>
+        <li><strong>Cancel:</strong> Dismiss the dialog if you are not ready
+          to connect devices. You can return to the <strong>Devices</strong>
+          page and use <strong>Find, Add or Change</strong> later.</li>
+      </ul>
+      <h3>If you need help</h3>
+      <p>If installation fails or the app does not open, note the exact message,
+        installer version, and step where it stopped. Contact Lignomat through
+        <a href="https://lignomatusa.com/">https://lignomatusa.com/</a>.
+        For administrator permissions or organization-managed security blocks,
+        contact your IT administrator.</p>
+      <p class="note"><strong>About these screenshots:</strong> Guide Version 4
+        is the document revision, not the application version. The same
+        instructions apply while the pictured controls and workflow remain
+        unchanged. You do not need to match the version numbers in the pictures.</p>
+      <footer class="footer">
+        <p>Lignomat Sensors | Google Chrome Getting Started | Guide Version 4</p>
+        <p>Print or save as PDF: use Letter paper, portrait orientation,
+          100% scale, and turn off browser headers and footers. The guide sets
+          0.6-inch print margins. Enable background graphics if you want the
+          shaded notes. Screenshots are local files; keep this HTML beside the
+          <code>edge browser download screenshots</code> and
+          <code>chrome browser app download screenshots</code> folders when
+          moving it or publishing it. The PDF can be shared on its own.</p>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
