@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Help with Windows certificate errors when Lignomat Sensors checks for updates, including a PowerShell workaround and troubleshooting steps.">
+  <title>Lignomat Sensors - Support Note 2026-10-25</title>
+  <link rel="stylesheet" href="support.css">
+</head>
+<body>
+  <main>
+    <nav aria-label="Site navigation"><a href="./">Troubleshooting Guide</a> &middot; <a href="../">Downloads</a></nav>
+    <h1>Lignomat Sensors - Support Note 2026-10-25</h1>
+    <h2>Windows: Certificate Errors When Checking for Updates</h2>
+    <p class="metadata"><strong>Applies to:</strong> Lignomat Sensors on Windows 10 and Windows 11<br>
+      <strong>Updated:</strong> October 25, 2026<br>
+      <strong>Audience:</strong> End-users and support technicians</p>
+    <p class="actions"><a href="support-note-2026-10-25.pdf" download>Download PDF</a></p>
+
+    <h2>Problem / Symptoms</h2>
+    <p>Use this note if checking for updates reports a network problem and the app's system log includes:</p>
+    <pre><code>UpdateService: GitHub check error - HandshakeException: ...
+CERTIFICATE_VERIFY_FAILED: unable to get local issuer certificate</code></pre>
+    <p>This means the app cannot verify the HTTPS connection to GitHub. It does not necessarily mean your internet connection is down or the installer is broken.</p>
+
+    <h2>Likely Cause</h2>
+    <p>Windows may be missing a trusted certificate, possibly due to a missed update, a security product, a network proxy changing certificates, or an organizational IT policy.</p>
+    <p>Windows can retrieve some missing trusted certificates automatically. The app's networking runtime may not trigger that retrieval. Connecting through Windows PowerShell may help, but it is not a guaranteed repair.</p>
+
+    <h2>Recommended Steps</h2>
+    <p>This method uses Windows' networking stack and may prompt Windows to retrieve the missing trusted certificate. Administrator access is not normally needed. You do not need to reinstall the app or enter any credentials.</p>
+    <ol>
+      <li>Fully close Lignomat Sensors, including any minimized instance.</li>
+      <li>Open the <strong>Start</strong> menu, type <strong>Windows PowerShell</strong>, and open it. Use Windows PowerShell, not Command Prompt.</li>
+      <li>
+        <p>Copy and paste the single command line below, then press <strong>Enter</strong>. Scroll horizontally if needed to see the entire command.</p>
+        <pre><code id="update-command">Invoke-WebRequest https://api.github.com -UseBasicParsing -TimeoutSec 30</code></pre>
+        <p class="actions"><button id="copy-command" type="button" hidden>Copy PowerShell command</button><span id="copy-status" role="status"></span></p>
+        <p>Capitalization does not matter for this command: PowerShell command and option names, and the URL's hostname, are case-insensitive. Spelling, punctuation, and spaces separating the parts do matter. Use ordinary hyphens (<code>-</code>) before option names, and do not insert spaces inside the URL or names. Multiple spaces between parts are okay.</p>
+        <p>This checks HTTPS trust for the same hostname the app uses. <code>-UseBasicParsing</code> avoids legacy parsing issues in Windows PowerShell, and <code>-TimeoutSec 30</code> prevents an indefinite wait.</p>
+      </li>
+      <li>Allow about 30 seconds for the request. If it remains stuck, press <strong>Ctrl+C</strong> to cancel.</li>
+      <li>Interpret the result:</li>
+    </ol>
+    <div class="table-scroll" role="region" aria-label="PowerShell results" tabindex="0">
+      <table>
+        <thead><tr><th scope="col">Result</th><th scope="col">Meaning and next action</th></tr></thead>
+        <tbody>
+          <tr><td><code>StatusCode : 200</code> and technical text</td><td>Windows connected successfully. Continue with Confirm the Result below.</td></tr>
+          <tr><td>An HTTP error such as <code>403</code> or <code>429</code>, without a certificate error</td><td>HTTPS connected, but the server rejected the request, possibly because of a request limit. This does not prove the app is repaired. Wait before retrying and retain the error for support.</td></tr>
+          <tr><td>A certificate, trust relationship, or secure-channel error</td><td>The connection still has a trust or TLS problem. Follow If the Problem Continues below.</td></tr>
+          <tr><td>A timeout, name-resolution error, or connection failure</td><td>Check the internet connection, firewall, and proxy. This is not confirmation of a certificate problem.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Confirm the Result</h2>
+    <ol>
+      <li>Reopen Lignomat Sensors.</li>
+      <li>Check for updates again.</li>
+      <li>Confirm that the certificate-related network error no longer appears. The app may offer an update or report that no newer version is available.</li>
+    </ol>
+    <p>Restarting the app matters: it may have loaded its trusted certificates before Windows retrieved the missing certificate. A successful PowerShell request alone does not prove that the app's connection is repaired.</p>
+
+    <h2>If the Problem Continues</h2>
+    <ol>
+      <li><strong>Check the date, time, and time zone.</strong> Open <strong>Settings &gt; Time &amp; Language &gt; Date &amp; time</strong> and correct any errors.</li>
+      <li><strong>Check Windows Update.</strong> On Windows 10, open <strong>Settings &gt; Update &amp; Security &gt; Windows Update &gt; Check for updates</strong>. On Windows 11, open <strong>Settings &gt; Windows Update &gt; Check for updates</strong>. Install updates available for the PC and restart if requested.</li>
+      <li><strong>Try a different network</strong>, such as a phone hotspot, if possible. If the app works there, ask your technician to investigate the original network's proxy, firewall, or HTTPS inspection.</li>
+      <li><strong>Contact support or your IT technician</strong> if the problem remains. Provide:
+        <ul>
+          <li>The installed Lignomat Sensors version.</li>
+          <li>The system-log error and the time it occurred.</li>
+          <li>The PowerShell result, if tried.</li>
+          <li>Whether a different network changed the result, if possible.</li>
+        </ul>
+      </li>
+    </ol>
+    <p>Do not send passwords, access keys, or other credentials.</p>
+
+    <h2>Technical Notes</h2>
+    <ul>
+      <li>Windows PowerShell and the app use different TLS implementations. The PowerShell request may retrieve a certificate that the app can then use, but it does not guarantee that the app will succeed.</li>
+      <li>Check whether your organizational policy disables automatic root-certificate updates or blocks Microsoft's certificate-update infrastructure.</li>
+      <li>Do not disable certificate verification, bypass browser warnings, or import certificates from unverified sources. Do not disable security software as a routine repair.</li>
+    </ul>
+    <h3>References</h3>
+    <ul>
+      <li><a href="https://github.com/dart-lang/sdk/issues/52266">Dart Windows certificate retrieval issue (dart-lang/sdk#52266)</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-cs/certificate-trust">Microsoft: certificates and trust</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1">Microsoft: Windows PowerShell Invoke-WebRequest</a></li>
+    </ul>
+  </main>
+  <script>
+    const copyButton = document.getElementById("copy-command");
+    if (navigator.clipboard && window.isSecureContext) {
+      copyButton.hidden = false;
+      copyButton.addEventListener("click", async () => {
+        const status = document.getElementById("copy-status");
+        try {
+          await navigator.clipboard.writeText(document.getElementById("update-command").textContent);
+          status.textContent = "Command copied.";
+        } catch (error) {
+          status.textContent = "Could not copy automatically. Select and copy the command above.";
+          console.error("Support note: clipboard copy failed", error);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
