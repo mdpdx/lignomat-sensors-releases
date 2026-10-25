@@ -173,6 +173,9 @@
         <a href="support/">Visit the Troubleshooting Guide</a> for support notes
         you can read online or download as PDFs.</p>
     </section>
+    <footer>
+      <p class="version-info" id="release-read-status" aria-live="polite"></p>
+    </footer>
   </main>
 
   <script>
@@ -198,6 +201,8 @@
     async function getReleases() {
       const releases = [];
       let url = API_URL;
+      let pagesRead = 0;
+      const readStatus = document.getElementById("release-read-status");
 
       while (url) {
         const response = await fetch(url, {
@@ -208,6 +213,11 @@
         }
         const page = await response.json();
         releases.push(...page);
+        pagesRead += 1;
+        readStatus.textContent =
+          `Read ${releases.length} releases / ${pagesRead} ${pagesRead === 1 ? "page" : "pages"}.`;
+        if (findLatestAsset(releases, "windows") &&
+            findLatestAsset(releases, "macos")) break;
         const nextPage = response.headers.get("Link")
           ?.split(",")
           .find(link => link.includes('rel="next"'));
@@ -267,6 +277,9 @@
         renderPlatform("windows", findLatestAsset(releases, "windows"));
         renderPlatform("macos", findLatestAsset(releases, "macos"));
       } catch (error) {
+        const readStatus = document.getElementById("release-read-status");
+        readStatus.textContent =
+          `${readStatus.textContent} Download lookup incomplete.`.trim();
         for (const platform of ["windows", "macos"]) {
           const status = document.getElementById(`${platform}-status`);
           status.classList.add("error");
